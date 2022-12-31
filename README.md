@@ -26,3 +26,6 @@ Future planned improvements :
 Application Features : 
 1. Search and return results - Book Title, Author, Book Cover 
 2. Exception Handling 
+
+Guidance : 
+The code has been commented for easier understanding
