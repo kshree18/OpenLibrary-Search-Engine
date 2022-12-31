@@ -1,0 +1,26 @@
+pip install streamlit
+pip install requests
+import streamlit as st
+import requests
+
+def main():
+    query = st.text_input("Enter search query")
+    if st.button("Search"):
+        # Make request to Open Library API
+        url = f"http://openlibrary.org/search.json?title={query}"
+        results = requests.get(url).json()
+        # Loop through search results
+        for result in results['docs']:
+            st.markdown(f"- [{result['title']}]")
+            if st.button(f"View details for {result['title']}"):
+                # Make request to Open Library API to retrieve book details
+                url = f"http://openlibrary.org/api/books?bibkeys=ISBN:{result['isbn'][0]}&format=json&jscmd=data"
+                book = requests.get(url).json()
+                # Display book details
+                st.markdown(f"<h2>{result['title']}</h2>", unsafe_allow_html=True)
+                st.markdown(f"<p>Author: {result['author_name'][0]}</p>", unsafe_allow_html=True)
+                st.markdown(f"<p>ISBN: {result['isbn'][0]}</p>", unsafe_allow_html=True)
+
+if _name_ == "_main_":
+    main()
+    streamlit run app.py
