@@ -8,12 +8,14 @@ This web application performs a HTTP Request to Open Libraries API to query for 
 Prequisites : 
 1. OS - Platform Independent i.e. Linux or Windows 
 2. Python3 
+3. Pip3
 
 
 Clone this repository with git clone command & run the following commands to prepare your environment : 
 1.Install Python3 from the following link  (https://www.python.org/downloads/) or for linux python3 is present by default.
-2.Python3 -m pip install -r requirements.txt 
-3.Python3 -m streamlit run app.py
+2.Install Pip - sudo apt install python3-pip, for windows this is present in python downloaded folder
+3.Pip install -r requirements.txt 
+4.Python3 -m streamlit run app.py
 
 Now the web app should be running in the localhost on port 8051 i.e., http://localhost:8051 visit this and search for your desired books. 
 
