@@ -53,5 +53,6 @@ df = pd.DataFrame(book_data, index=range(1, len(book_data)+1))
 html_table = df.to_html(escape=False)
 
 # Display the HTML table using the st.markdown function
+st.title("Displaying top 10 results")
 st.markdown(html_table, unsafe_allow_html=True)
 
